@@ -7,13 +7,13 @@
     box-sizing: border-box;
 }
 body{
-    font-family: $body-font-family;
+    font-family: $heading-font-family;
     background-color: $WHITE;
     line-height: $LINE-HEIGHT-BASE;
     color: $BLACK;
     @include clearfix;
     min-height: 100vh;
-    @include responsive-font(16px, 20px);
+    @include responsive-font(15px, 20px);
     @include grid-center;
     width: 100%;
 }
@@ -29,7 +29,8 @@ header{
 
 footer{
     width: 100%;
-    background-color: $GREY-200;
+    background-color: $BLACK;
+    color: $WHITE;
     padding: 2rem;
     text-align: center;
     font-size: 0.9rem;
@@ -65,4 +66,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .visible{
     display: block !important;
+}
+main{
+    @include grid-center;
 }
