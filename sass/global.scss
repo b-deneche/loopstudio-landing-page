@@ -1,0 +1,68 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: $body-font-family;
+    background-color: $WHITE;
+    line-height: $LINE-HEIGHT-BASE;
+    color: $BLACK;
+    @include clearfix;
+    min-height: 100vh;
+    @include responsive-font(16px, 20px);
+    @include grid-center;
+    width: 100%;
+}
+header{
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    padding:0;
+    font-weight: $heading-font-weight;
+    font-family: $heading-font-family;
+}
+
+footer{
+    width: 100%;
+    background-color: $GREY-200;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    &:hover{
+        color: aqua;
+    }
+}
+ul{
+    list-style: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    overflow: cover;
+}
+button{
+    cursor: pointer;
+    border: 1px solid black;
+    background: none;
+}
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+
+.hidden{
+    display: none !important;
+}
+.visible{
+    display: block !important;
+}

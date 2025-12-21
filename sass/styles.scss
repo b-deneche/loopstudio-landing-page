@@ -1,0 +1,99 @@
+@use "global" as *;
+@use "variables" as *;
+@use "mixins" as *;
+
+/* Additional custom styles can be added below */
+.top-header {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  color: $WHITE;
+  padding: 0.5rem 2rem;
+  @include flex-row;
+  gap: 30%;
+  font-size: 0.9rem;
+  .nav-bar {
+    @include flex-row;
+  }
+  .nav-links {
+    @include flex-row;
+    gap: 2rem;
+  }
+}
+.header-img {
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: cover;
+  width:100%;
+  height: 30rem;
+  z-index: -1;
+}
+
+.context {
+  padding: 1rem 3rem;
+  border: 1px solid $WHITE;
+  position: absolute;
+  top: 12rem;
+  left: 16%;
+  width: 45ch;
+  height: min-content;
+  text-align: left;
+  color: $WHITE;
+  text-transform: uppercase;
+  font-family: $heading-font-family;
+  background-color: transparent;
+  h1 {
+    font-size: 3rem;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+    line-height: 1.1;
+  }
+}
+.vr-interactive {
+  margin: 5rem 0;
+  width: 80%;
+  height: max-content;
+  
+  img {
+    position:relative;
+    z-index: -1;
+    width: 90%;
+  }
+  .content {
+    font-family: $heading-font-family;
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top : 42rem;
+    background-color: $WHITE;
+    padding: 1rem;
+    text-align: left;
+    h1 {
+      text-transform: uppercase;
+      font-size: 3rem;
+      letter-spacing: 0.1rem;
+      font-weight: 200;
+      width: 14ch;
+    }
+    p {
+      font-size: small;
+      width: 52ch;
+      text-align: left;
+    }
+  }
+}
+.creation{
+  @include flex-row;
+  @include flex-space-between;
+}
+.creations{
+  margin: 2rem 0;
+  display: grid; 
+  place-items: center; 
+  place-content: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto, 1fr*4);
+}
