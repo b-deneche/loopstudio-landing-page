@@ -26,6 +26,10 @@ header{
     font-weight: $heading-font-weight;
     font-family: $heading-font-family;
 }
+nav{
+    padding: 0;
+    margin: 0;
+}
 
 footer{
     width: 100%;
@@ -44,7 +48,17 @@ a{
     }
 }
 ul{
+    height: 2rem;
     list-style: none;
+    li{
+        height: 2rem;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+    }
+    li:hover{
+        border-bottom:1px solid $WHITE;
+    }
 }
 img{
     max-width: 100%;
