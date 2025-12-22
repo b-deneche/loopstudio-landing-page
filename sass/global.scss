@@ -35,29 +35,32 @@ footer{
     width: 100%;
     background-color: $BLACK;
     color: $WHITE;
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.9rem;
 }
 
 a{
     text-decoration: none;
     color: inherit;
-    &:hover{
-        color: aqua;
-    }
 }
 ul{
     height: 2rem;
     list-style: none;
+    gap: 2rem;
     li{
         height: 2rem;
-        text-align: left;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
         align-items: center;
         justify-content: center;
     }
     li:hover{
-        border-bottom:1px solid $WHITE;
+        .line{
+            width: 50%;
+            transform: translate(50%, 1rem);
+            height: 0;
+            border-bottom: 1px solid $WHITE;
+            opacity: 1;
+        }
     }
 }
 img{
@@ -68,8 +71,12 @@ img{
 }
 button{
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid $BLACK;
     background: none;
+    &:hover{
+        background-color: $BLACK;
+        color: $WHITE;
+    }
 }
 h1, h2, h3, h4, h5, h6{
     font-weight: normal;
