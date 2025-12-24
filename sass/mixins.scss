@@ -34,24 +34,6 @@
     box-shadow: $x $y $blur $color;
 }
 
-@mixin clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
-
-@mixin hover-effect($color: $PRIMARY-COLOR) {
-    &:hover {
-        color: $color;
-        @include transition(all, 0.3s);
-    }
-}
-
-@mixin gradient-background($start-color, $end-color, $direction: to right) {
-    background: linear-gradient($direction, $start-color, $end-color);
-}
 @mixin responsive-font($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
     font-size: calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw})));
 }

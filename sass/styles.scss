@@ -1,6 +1,7 @@
 @use "global" as *;
 @use "variables" as *;
 @use "mixins" as *;
+@use "media" as *;
 
 /* Additional custom styles can be added below */
 .top-header {
@@ -19,6 +20,10 @@
   .nav-links {
     @include flex-row;
     gap: 2rem;
+  }
+  .hamburger-menu {
+    display: none;
+    //opacity: 0;
   }
 }
 .header-img {
@@ -45,7 +50,7 @@
   font-family: $heading-font-family;
   background-color: transparent;
   h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, calc(2rem + 0.5vw), 3rem);
     font-weight: 150;
     letter-spacing: 0.1rem;
     line-height: 1.1;
@@ -73,10 +78,9 @@
     text-align: left;
     h1 {
       text-transform: uppercase;
-      font-size: 2.2rem;
+      font-size: clamp(2rem, calc(2rem + 0.5vw), 3rem);
       letter-spacing: 0.1rem;
       font-weight: 140;
-      width: 14ch;
     }
     p {
       font-size: 1rem;
@@ -109,16 +113,21 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
-  div{
-    &:hover{
+  div {
+    width: 100%;
+    overflow: hidden;
+  
+    &:hover {
+      cursor: pointer;
       opacity: 0.99;
       background-image: linear-gradient($WHITE);
       color: $BLACK;
-      img{
+      img {
         opacity: 0.4;
       }
-      span{
+      span {
         color: $BLACK;
+        font-weight: 250;
         opacity: 1;
         z-index: 1;
       }
@@ -136,9 +145,10 @@
     position: absolute;
     z-index: 1;
     transform: translate(03%, -200%);
-    font-size: clamp(1rem, calc(1rem + 1vw), 2rem);
-    width: 12ch;
+    font-size: clamp(1rem, calc(1rem + 0.5vw), 2rem);
     font-weight: 200;
+    text-align: center;
+    padding: 0.2rem 0.5rem;
   }
 }
 
@@ -151,37 +161,187 @@ footer {
   padding: 1.5rem 0;
   gap: 1rem;
   .contacts {
-    width: 75%;
+    width: 70%;
     @include flex-space-between;
     img {
       overflow: hidden;
+    }
+    span {
+      color: $GREY-400;
     }
     .social-links {
       width: 15%;
       @include flex-row;
       gap: 1rem;
-      a:hover{
-        .line{
-            width: 100%;
-            transform: translate(0%, 0.6rem);
-            height: 0;
-            border-bottom: 1px solid $WHITE;
-            opacity: 1;
+      a:hover {
+        .line {
+          width: 100%;
+          transform: translate(0%, 0.6rem);
+          height: 0;
+          border-bottom: 1px solid $WHITE;
+          opacity: 1;
         }
       }
     }
   }
   .links-l {
-    font-size: clamp(15px, calc(0.75rem + 0.5vw), 16px);
+    font-size: clamp(0.9rem, calc(0.75rem + 0.5vw), 1rem);
     @include flex-space-between;
-    width: 75%;
+    width: 70%;
     ul {
       width: 40%;
       @include flex-space-between;
     }
     span {
-      text-align: start;
+      text-align: center;
       height: 2rem;
+    }
+  }
+}
+.logo2 {
+  height: 0;
+  margin: 0;
+
+  height: max-content;
+  padding: 1rem;
+  img {
+    overflow: cover;
+    transform: translate(200%, 220%);
+  }
+}
+
+@media screen and (max-width: 445px) {
+  header .context {
+    border: 1px solid $WHITE;
+    width: 60%;
+    padding: 1rem;
+    h1 {
+      font-size: clamp(1.5rem, calc(1rem + 0.5vw), 2.5rem);
+      width: auto;
+    }
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .vr-interactive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem;
+    height: max-content;
+    img {
+      position: relative;
+      left: auto;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    .content {
+      height: 100%;
+      width: 100%;
+      transform: translate(0, 0);
+      p {
+        width: fit-content;
+      }
+    }
+  }
+  .top-header .hamburger-menu {
+    display: block;
+  }
+  .top-header {
+    .nav-bar {
+      width: fit-content;
+      height: fit-content;
+      .nav-links {
+        li {
+          display: none;
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+  .creations {
+    div {
+      position: sticky;
+      overflow: hidden;
+      height: 12rem;
+      img {
+        position: relative;
+        overflow: hidden;
+        height: auto;
+      }
+      span{
+        font-weight: 200;
+        transform: translate(10%, -1800%);
+      }
+    }
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .contacts {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      img {
+        width: max-content;
+        overflow: cover;
+      }
+      .social-links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        a img {
+          overflow: cover;
+          height: 1.2rem;
+          width: 1.2rem;
+        }
+      }
+    }
+  }
+  .logo2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $BLACK;
+    height: max-content;
+    padding: 1rem;
+    img {
+      width: 50%;
+      transform: translate(0, 0);
+    }
+  }
+  .links-l {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: max-content;
+    img {
+      width: 100%;
+    }
+    .loop-links {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: max-content;
     }
   }
 }

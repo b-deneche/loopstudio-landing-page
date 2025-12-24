@@ -11,7 +11,6 @@ body{
     background-color: $WHITE;
     line-height: $LINE-HEIGHT-BASE;
     color: $BLACK;
-    @include clearfix;
     min-height: 100vh;
     @include responsive-font(15px, 20px);
     @include grid-center;
@@ -65,8 +64,8 @@ ul{
 }
 img{
     max-width: 100%;
-    height: auto;
     display: block;
+    height: auto;
     overflow: cover;
 }
 button{
