@@ -1,92 +1,97 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    font-family: $heading-font-family;
-    background-color: $WHITE;
-    line-height: $LINE-HEIGHT-BASE;
-    color: $BLACK;
-    min-height: 100vh;
-    @include responsive-font(15px, 20px);
-    @include grid-center;
-    width: 100%;
+body {
+  font-family: $heading-font-family;
+  background-color: $WHITE;
+  line-height: $LINE-HEIGHT-BASE;
+  color: $BLACK;
+  min-height: 100vh;
+  @include responsive-font(15px, 20px);
+  @include grid-center;
+  width: 100%;
 }
-header{
-    top: 0;
-    left: 0;
-    margin: 0;
-    width: 100%;
-    padding:0;
-    font-weight: $heading-font-weight;
-    font-family: $heading-font-family;
+header {
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  font-weight: $heading-font-weight;
+  font-family: $heading-font-family;
 }
-nav{
-    padding: 0;
-    margin: 0;
+nav {
+  padding: 0;
+  margin: 0;
 }
 
-footer{
-    width: 100%;
+footer {
+  width: 100%;
+  background-color: $BLACK;
+  color: $WHITE;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  height: 2rem;
+  list-style: none;
+  gap: 2rem;
+  li {
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  li:hover {
+    .line {
+      width: 50%;
+      transform: translate(50%, 1rem);
+      height: 0;
+      border-bottom: 1px solid $WHITE;
+      opacity: 1;
+    }
+  }
+}
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  overflow: cover;
+}
+button {
+  cursor: pointer;
+  border: 1px solid $BLACK;
+  background: none;
+  &:hover {
     background-color: $BLACK;
     color: $WHITE;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
+.hidden {
+  display: none !important;
 }
-ul{
-    height: 2rem;
-    list-style: none;
-    gap: 2rem;
-    li{
-        height: 2rem;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
-    li:hover{
-        .line{
-            width: 50%;
-            transform: translate(50%, 1rem);
-            height: 0;
-            border-bottom: 1px solid $WHITE;
-            opacity: 1;
-        }
-    }
+.visible {
+  display: block !important;
 }
-img{
-    max-width: 100%;
-    display: block;
-    height: auto;
-    overflow: cover;
-}
-button{
-    cursor: pointer;
-    border: 1px solid $BLACK;
-    background: none;
-    &:hover{
-        background-color: $BLACK;
-        color: $WHITE;
-    }
-}
-h1, h2, h3, h4, h5, h6{
-    font-weight: normal;
-}
-
-.hidden{
-    display: none !important;
-}
-.visible{
-    display: block !important;
-}
-main{
-    @include grid-center;
+main {
+  @include grid-center;
 }
