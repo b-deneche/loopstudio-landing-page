@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+    <!-- displays site properly based on user's device 
 
     <link
       rel="icon"
@@ -11,7 +11,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
+-->
     <title>Frontend Mentor | Loopstudios landing page</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
@@ -24,10 +24,16 @@
       />
       <div class="top-header">
         <div class="logo">
-          <img src="./sass/images/logo.svg" alt="Loopstudios Logo" />
+          <img src="./sass/images/logo.svg" alt="Loopstudios Logo" id="logo" />
         </div>
-        <nav class="nav-bar">
-          <ul class="nav-links">
+        <nav class="nav-bar" id="nav-bar">
+          <bbutton id="menu-btn" class="notclicked">
+            <img
+              src="./sass/images/icon-hamburger.svg"
+              alt=""
+              class="hamburger-menu"
+          /></bbutton>
+          <ul class="nav-links" id="nav-links">
             <li id="li1">
               <a href="#"
                 >About
@@ -59,11 +65,6 @@
               ></a>
             </li>
           </ul>
-          <img
-            src="./sass/images/icon-hamburger.svg"
-            alt=""
-            class="hamburger-menu"
-          />
         </nav>
       </div>
       <div class="context">
@@ -85,41 +86,41 @@
         </div>
       </div>
       <div class="creation">
-        <span>Our creations</span>
+        <h2>Our creations</h2>
         <button class="">See all</button>
       </div>
       <section class="creations">
         <div class="earth">
           <img src="./sass/images/desktop/image-deep-earth.jpg" alt="" />
-          <span>Deep earth</span>
+          <h2>Deep earth</h2>
         </div>
         <div class="arcade">
           <img src="./sass/images/desktop/image-night-arcade.jpg" alt="" />
-          <span>Night arcade</span>
+          <h2>Night arcade</h2>
         </div>
         <div class="soccer">
           <img src="./sass/images/desktop/image-soccer-team.jpg" alt="" />
-          <span>Soccer team VR</span>
+          <h2>Soccer team VR</h2>
         </div>
         <div class="grid">
           <img src="./sass/images/desktop/image-grid.jpg" alt="" />
-          <span>The grid</span>
+          <h2>The grid</h2>
         </div>
         <div class="forum">
           <img src="./sass/images/desktop/image-from-above.jpg" alt="" />
-          <span>From up above VR</span>
+          <h2>From up above VR</h2>
         </div>
         <div class="pocket">
           <img src="./sass/images/desktop/image-pocket-borealis.jpg" alt="" />
-          <span>Pocket borealis</span>
+          <h2>Pocket borealis</h2>
         </div>
         <div class="curios">
           <img src="./sass/images/desktop/image-curiosity.jpg" alt="" />
-          <span>The curiosity</span>
+          <h2>The curiosity</h2>
         </div>
         <div class="fisheye">
           <img src="./sass/images/desktop/image-fisheye.jpg" alt="" />
-          <span>Make it fisheye</span>
+          <h2>Make it fisheye</h2>
         </div>
       </section>
     </main>
@@ -183,6 +184,7 @@
         <span> © 2021 Loopstudios. All rights reserved. </span>
       </div>
     </footer>
+
     <!--
             <span> © 2021 Loopstudios. All rights reserved. </span>
 
@@ -190,5 +192,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
-  --></body>
+  -->
+    <script src="./script.js" async defer></script>
+  </body>
 </html>

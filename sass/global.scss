@@ -7,12 +7,12 @@
   box-sizing: border-box;
 }
 body {
-  font-family: $heading-font-family;
+  font-family: $body-font-family;
   background-color: $WHITE;
   line-height: $LINE-HEIGHT-BASE;
   color: $BLACK;
   min-height: 100vh;
-  @include responsive-font(15px, 20px);
+  font-size: clamp(15px, calc(1rem + 1vw), 16px);
   @include grid-center;
   width: 100%;
 }
@@ -22,8 +22,8 @@ header {
   margin: 0;
   width: 100%;
   padding: 0;
-  font-weight: $heading-font-weight;
-  font-family: $heading-font-family;
+  font-weight: $body-font-weight;
+  font-family: $body-font-family;
 }
 nav {
   padding: 0;
@@ -31,6 +31,8 @@ nav {
 }
 
 footer {
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
   width: 100%;
   background-color: $BLACK;
   color: $WHITE;
@@ -45,7 +47,7 @@ ul {
   list-style: none;
   gap: 2rem;
   li {
-    height: 2rem;
+    height: 1rem;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -55,7 +57,7 @@ ul {
   li:hover {
     .line {
       width: 50%;
-      transform: translate(50%, 1rem);
+      transform: translate(50%, 0.5rem);
       height: 0;
       border-bottom: 1px solid $WHITE;
       opacity: 1;
@@ -66,7 +68,7 @@ img {
   max-width: 100%;
   display: block;
   height: auto;
-  overflow: cover;
+  overflow:visible;
 }
 button {
   cursor: pointer;
@@ -83,7 +85,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
+  font-weight: $heading-font-weight;
+  font-family: $heading-font-family;
 }
 
 .hidden {
@@ -91,6 +94,10 @@ h6 {
 }
 .visible {
   display: block !important;
+  height: fit-content;
+  width: fit-content;
+  padding: 2rem;
+  gap: 1rem;
 }
 main {
   @include grid-center;
