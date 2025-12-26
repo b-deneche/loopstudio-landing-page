@@ -1,17 +1,28 @@
 const hamburger = document.querySelector("#menu-btn");
-const navLinks = document.getElementById("nav-links");
+const drop = document.querySelector("#drop-btn");
+const navLinks = document.getElementById("drop-menu");
 
-console.log(navLinks);
 hamburger.addEventListener('click', () => {
     const btnState = hamburger.classList.item(0);
     console.log(btnState)
     if (btnState === "notclicked") {
         hamburger.classList.replace("notclicked","clicked");
-        navLinks.classList.add("hidden");
-        navLinks.classList.remove("visible");
+        navLinks.classList.replace("visible", "hidden");
     } else {
         hamburger.classList.replace("clicked","notclicked");
-        navLinks.classList.remove("hidden");
-        navLinks.classList.add("visible");
+        navLinks.classList.replace("hidden","visible");
+    }
+})
+
+
+drop.addEventListener('click', () => {
+    const btnState = hamburger.classList.item(0);
+    console.log(btnState)
+    if (btnState === "notclicked") {
+        hamburger.classList.replace("notclicked","clicked");
+        navLinks.classList.replace("visible", "hidden");
+    } else {
+        hamburger.classList.replace("clicked","notclicked");
+        navLinks.classList.replace("hidden","visible");
     }
 })

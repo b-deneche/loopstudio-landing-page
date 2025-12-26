@@ -3,36 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device 
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./sass/images/favicon-32x32.png"
     />
+    <!-- displays site properly based on user's device 
+
+    
 -->
     <title>Frontend Mentor | Loopstudios landing page</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <header>
+      <!--************** ***************** ************** **************** **************** ***************** ************-->
+      <div id="drop-menu" class="drop-menu hidden">
+        <div class="logo">
+          <img src="./sass/images/logo.svg" alt="Loopstudios Logo" id="logo" />
+          <button type="button" class="clicked" title="Toggle navigation menu">
+            <img
+              src="./sass/images/icon-close.svg"
+              alt="Menu icon"
+              id="drop-btn"
+              class="hamburger-menu clicked"
+          /></button>
+        </div>
+        <nav class="nav-bar" id="n-bar">
+          <ul class="n-links" id="n-links">
+            <li id="">
+              <a href="#"
+                >About
+                <div class="line"></div
+              ></a>
+            </li>
+            <li id="">
+              <a href="#"
+                >Careers
+                <div class="line"></div
+              ></a>
+            </li>
+            <li id="">
+              <a href="#"
+                >Events
+                <div class="line"></div
+              ></a>
+            </li>
+            <li id="">
+              <a href="#"
+                >Products
+                <div class="line"></div
+              ></a>
+            </li>
+            <li id="">
+              <a href="#"
+                >Support
+                <div class="line"></div
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- **************** ******************** *************** *********************** -->
       <img
         class="header-img"
         src="./sass/images/desktop/image-hero.jpg"
         alt=""
       />
+
       <div class="top-header">
         <div class="logo">
           <img src="./sass/images/logo.svg" alt="Loopstudios Logo" id="logo" />
         </div>
         <nav class="nav-bar" id="nav-bar">
-          <bbutton id="menu-btn" class="notclicked">
+          <button id="menu-btn" type="button" class="clicked" title="Toggle navigation menu">
             <img
               src="./sass/images/icon-hamburger.svg"
-              alt=""
+              alt="Menu icon"
               class="hamburger-menu"
-          /></bbutton>
+          /></button>
           <ul class="nav-links" id="nav-links">
             <li id="li1">
               <a href="#"
@@ -124,11 +175,10 @@
         </div>
       </section>
     </main>
-    <div class="logo2">
-      <img src="./sass/images/logo.svg" alt="" />
-    </div>
+    
     <footer>
       <div class="links-l">
+      <img src="./sass/images/logo.svg" alt="" id="logo-b"/>
         <ul class="loop-links">
           <li>
             <a href="#"
@@ -164,19 +214,19 @@
       </div>
       <div class="contacts">
         <div class="social-links">
-          <a href="#"
+          <a href="#" aria-label="facebook"
             ><img src="./sass/images/icon-facebook.svg" alt="" />
             <div class="line"></div
           ></a>
-          <a href="#"
+          <a href="#" aria-label="instagram"
             ><img src="./sass/images/icon-instagram.svg" alt="" />
             <div class="line"></div
           ></a>
-          <a href="#"
+          <a href="#" aria-label="pinterest"
             ><img src="./sass/images/icon-pinterest.svg" alt="" />
             <div class="line"></div
           ></a>
-          <a href="#"
+          <a href="#" aria-label="twitter"
             ><img src="./sass/images/icon-twitter.svg" alt="" />
             <div class="line"></div
           ></a>
