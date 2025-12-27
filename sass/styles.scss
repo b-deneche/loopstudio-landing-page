@@ -12,7 +12,8 @@
   color: $WHITE;
   @include flex-row;
   gap: 30%;
-  font-size: 1rem;
+  //font-size: 1rem;
+  font-size: clamp(0.85rem, calc(1rem + 1vw), 1.4rem);
   .nav-bar {
     position: relative;
     @include flex-row;
@@ -47,8 +48,9 @@
   padding: 1rem 3rem;
   border: 1px solid $WHITE;
   position: absolute;
-  top: 35%;
-  left: 16%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 60ch;
   height: min-content;
   text-align: left;
@@ -57,8 +59,8 @@
   background-color: transparent;
   h1 {
     font-family: $body-font-family;
-    font-weight: $heading-font-weight;
-    font-size: clamp(1rem, calc(2rem + 5vw), 3rem);
+    font-weight: 340;
+    font-size: clamp(1.5rem, calc(2rem + 5vw), 3rem);
     letter-spacing: 0.8rem;
     line-height: 1.1;
   }
@@ -68,7 +70,6 @@
   height: max-content;
   overflow: hidden;
   width: 100%;
-  margin-bottom: -20%;
   img {
     position: sticky;
     z-index: -1;
@@ -105,13 +106,13 @@
   width: 95%;
   @include flex-row;
   @include flex-space-between;
-  span {
-    font-size: clamp(1rem, calc(1rem + 1vw), 2rem);
-    font-weight: 150;
+  h2 {
+    font-size: clamp(0.95rem, calc(1rem + 1vw), 1.5rem);
+    text-align: center;
   }
-  button {
-    font-size: clamp(0.75rem, calc(1rem + 1vw), 1rem);
-    font-weight: 200;
+  .btn {
+    font-size: clamp(0.95rem, calc(1rem + 1vw), 1.5rem);
+    font-weight: 300;
     padding: 0.5rem 2rem;
     text-transform: uppercase;
   }
@@ -122,7 +123,6 @@
   margin: 2rem 0;
   display: grid;
   place-items: center;
-  place-content: center;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
@@ -132,8 +132,6 @@
 
     &:hover {
       cursor: pointer;
-      opacity: 0.99;
-      background-image: linear-gradient($WHITE);
       img {
         opacity: 0.4;
       }
@@ -227,7 +225,6 @@ footer {
   color: $WHITE;
   z-index: 2;
   right: 0;
-  height: 55vh;
   width: 100vw;
   align-items: center;
   justify-content: center;
@@ -237,23 +234,30 @@ footer {
     flex-direction: row;
     margin: 1rem 3rem 4rem 3rem;
   }
+  ul {
+    padding: 5rem 2rem;
+    @include flex-space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    background-color: $BLACK;
+  }
   li {
-    height: 3rem;
+    width: fit-content;
   }
 }
 
 /* media query */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 800px) {
   header .context {
     border: 1px solid $WHITE;
-    width: 90%;
-    left: 5%;
+    transform: translate(-50%, -50%);
+    width: 80%;
     padding: 1.4rem;
     letter-spacing: 0.2rem;
     h1 {
-      font-size: clamp(1.5rem, calc(1rem + 0.5vw), 2.5rem);
-      width: auto;
+      font-size: clamp(1.2rem, calc(1rem + 0.5vw), 2.5rem);
     }
   }
 
@@ -304,10 +308,10 @@ footer {
       display: block;
       .nav-links {
         display: none;
-        background-color: $BLACK;
         li {
           height: 3rem;
           opacity: 1;
+          background-color: $BLACK;
         }
       }
     }
@@ -343,9 +347,8 @@ footer {
       align-items: center;
       justify-content: center;
       gap: 2rem;
-      img {
-        width: max-content;
-        overflow: hidden;
+      span {
+        font-size: clamp(0.8rem, calc(0.8rem + 0.5vw), 1em);
       }
       .social-links {
         display: flex;
