@@ -4,7 +4,6 @@ const navLinks = document.getElementById("drop-menu");
 
 hamburger.addEventListener('click', () => {
     const btnState = hamburger.classList.item(0);
-    console.log(btnState)
     if (btnState === "notclicked") {
         hamburger.classList.replace("notclicked","clicked");
         navLinks.classList.replace("visible", "hidden");
@@ -17,7 +16,6 @@ hamburger.addEventListener('click', () => {
 
 drop.addEventListener('click', () => {
     const btnState = hamburger.classList.item(0);
-    console.log(btnState)
     if (btnState === "notclicked") {
         hamburger.classList.replace("notclicked","clicked");
         navLinks.classList.replace("visible", "hidden");
